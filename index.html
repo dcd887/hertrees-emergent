@@ -612,15 +612,15 @@ const R4=(function(){
     {seed:[[0,0,0,0,0],[0,0,1,0,0],[1,1,1,0,0],[0,0,0,0,1],[0,0,0,0,0]],
      target:[[0,0,0,0,0],[0,0,1,0,0],[0,1,1,1,0],[0,0,1,0,0],[0,0,0,0,0]]}
   ];
-  const grid=$("#caGrid"), tg=$("#targetGrid");
+  const box=$("#caGrid"), tg=$("#targetGrid");
   const cells=[], tCells=[];
   let stage=0, steps=0, done=false, entered=false;
-  let r_survive=false, r_birth=false, r_seq=false;
+  let grid=[], r_survive=false, r_birth=false, r_seq=false;
 
   for(let r=0;r<N;r++){
     const rc=[], rt=[];
     for(let c=0;c<N;c++){
-      const d=document.createElement("div"); d.className="cell"; grid.appendChild(d); rc.push(d);
+      const d=document.createElement("div"); d.className="cell"; box.appendChild(d); rc.push(d);
       const t=document.createElement("div"); t.className="tcell"; tg.appendChild(t); rt.push(t);
     }
     cells.push(rc); tCells.push(rt);
